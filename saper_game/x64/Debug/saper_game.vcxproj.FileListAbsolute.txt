@@ -1,0 +1,6 @@
+D:\projects\saper_game\x64\Debug\saper_game.exe
+C:\Users\Łukasz\Desktop\saper_game\x64\Debug\saper_game.exe
+C:\Users\Łukasz\Desktop\pobrane\saper_game\x64\Debug\saper_game.exe
+C:\Users\Kacper\Desktop\saper_game\x64\Debug\saper_game.exe
+C:\saper_game\x64\Debug\saper_game.exe
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\x64\Debug\saper_game.exe

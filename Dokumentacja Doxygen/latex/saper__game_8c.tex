@@ -1,0 +1,428 @@
+\doxysection{C\+:/saper\+\_\+game/saper\+\_\+game.c File Reference}
+\hypertarget{saper__game_8c}{}\label{saper__game_8c}\index{C:/saper\_game/saper\_game.c@{C:/saper\_game/saper\_game.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro5.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+font.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+primitives.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+color.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpole}{pole}}
+\begin{DoxyCompactList}\small\item\em Struktura okreslajaca wlasciwosci kazdego pola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}~8
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}~8
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}}~640
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_a6974d08a74da681b3957b2fead2608b8}{SCREEN\+\_\+\+HEIGHT}}~700
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_aafae709d7f0b19ee1fb5163f33b9fd4c}{ROZMIAR\+\_\+\+KOMORKI}}~(\mbox{\hyperlink{saper__game_8c_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}} / \mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}})
+\item 
+\#define \mbox{\hyperlink{saper__game_8c_aa968a61524f9ed159c4c5464cb26dd41}{FONT\+\_\+\+SIZE}}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{saper__game_8c_aae1e7d4e32a0de3f1e7ec30fa6b14fa1}{przegrany\+\_\+czas}} (clock\+\_\+t start, clock\+\_\+t end)
+\begin{DoxyCompactList}\small\item\em Funkcja liczaca czas w ktorym gracz przeszedl gre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_abc67964df32c0de381bd1bc295aeef86}{policz\+\_\+miny}} (int x, int y, \mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do zliczenia ilosci min wokol kazdego pola na planszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a20f5bff5c81d24f98952f4d9236854c8}{zaladowanie\+\_\+planszy}} (\mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}$\,$\mbox{]}, int liczba\+\_\+min)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do wyzerowania wszystkich pol planszy, a nastepnie wylosowania miejsc polozenia min. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a91e18fad696798cd7a84b8c5748b98d6}{rysuj\+\_\+plansze}} (\mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}, int licznik\+\_\+oflagowanych, int licznik\+\_\+bomb)
+\begin{DoxyCompactList}\small\item\em Funckja sluzaca do narysowania planszy gry na ekranie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a64cc188b2c56200ea0feb5ec2ba39b03}{rysuj\+\_\+przegrana}} (\mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funckja sluzaca do narysowania planszy po przegranej grze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a3911956d8fa12ec01f7d4aeed6206ad8}{zapisz\+\_\+czas}} (int minuty, int sekundy)
+\begin{DoxyCompactList}\small\item\em Funkcja zapisujaca czas przejscia gry do zewnetrznego pliku tekstowego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a209a458f0362c3fd6a2f0d3a78712a24}{po\+\_\+wygranej}} (clock\+\_\+t start)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do wyswietlenia ekranu koncowego po wygranej grze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_af0ea3457c6588a3b6066c5535de30aab}{obsluga\+\_\+klikniecia\+\_\+l}} (int x, int y, \mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}, int licznik\+\_\+bomb)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do obslugi klikniecia lewego przycisku myszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a808255a2e00937051acc78c8cf237bda}{obsluga\+\_\+klikniecia\+\_\+p}} (int x, int y, \mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}, int licznik\+\_\+bomb)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do klikniecie prawego przycisku myszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_aa33a70c100c88686d51b0f67b1fc53f6}{liczenie\+\_\+index}} (int mousex, int mousey, \mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}, int rodzaj\+\_\+przycisku, int licznik\+\_\+bomb)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do stwierdzenia lokalizacja kliknietego przycisku myszy i wywolania odpowiedniej funkcji z obsluga dla danego przycisku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a0863160269abea96094a2dcf92055036}{wyswietlenie\+\_\+planszy}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do wyswietlenia menu glownego i obslugi interakcji z nim zwiazanych. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a5d2de3327d02c65eb11269b47038cd84}{sortuj\+\_\+czasy}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do sortowania czasow w pliku tekstowym, tak by najelpsze wyswietlaly sie na gorze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a86bdb2352fb60b6dbab2a2a807ce9b85}{wyswietlenie\+\_\+tablicy\+\_\+wynikow}} (ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}display, ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}event\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do wyswietlania tablicy wynikow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_ae24e2c7a64b9c6a19a6f99cf6fec234d}{rozgrywka}} (\mbox{\hyperlink{structpole}{pole}} tablica\mbox{[}\mbox{\hyperlink{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}{WIERSZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}}\mbox{]}, int tablica2\mbox{[}10\mbox{]}\mbox{[}10\mbox{]}, ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}display, ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}font, ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}event\+\_\+queue, int liczba\+\_\+min, clock\+\_\+t start)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do obslugi okna z plansza gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_abb37da0487e02b7c458cd2a94056af89}{wyswietlenie\+\_\+planszy}} (ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}display, ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}event\+\_\+queue, ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}font)
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do wyswietlenia menu glownego i obslugi interakcji z nim zwiazanych. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{saper__game_8c_a9f48de1720463fb6397d6fb409f90790}{start\+\_\+okna}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja sluzaca do stworzenia okna calej aplikacji. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{saper__game_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Glowna funkcja programu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{saper__game_8c_aa968a61524f9ed159c4c5464cb26dd41}\label{saper__game_8c_aa968a61524f9ed159c4c5464cb26dd41} 
+\index{saper\_game.c@{saper\_game.c}!FONT\_SIZE@{FONT\_SIZE}}
+\index{FONT\_SIZE@{FONT\_SIZE}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{FONT\_SIZE}{FONT\_SIZE}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+SIZE~20}
+
+\Hypertarget{saper__game_8c_a867cde93b69d24d64969b624c1a62530}\label{saper__game_8c_a867cde93b69d24d64969b624c1a62530} 
+\index{saper\_game.c@{saper\_game.c}!KOLUMNY@{KOLUMNY}}
+\index{KOLUMNY@{KOLUMNY}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{KOLUMNY}{KOLUMNY}}
+{\footnotesize\ttfamily \#define KOLUMNY~8}
+
+\Hypertarget{saper__game_8c_aafae709d7f0b19ee1fb5163f33b9fd4c}\label{saper__game_8c_aafae709d7f0b19ee1fb5163f33b9fd4c} 
+\index{saper\_game.c@{saper\_game.c}!ROZMIAR\_KOMORKI@{ROZMIAR\_KOMORKI}}
+\index{ROZMIAR\_KOMORKI@{ROZMIAR\_KOMORKI}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{ROZMIAR\_KOMORKI}{ROZMIAR\_KOMORKI}}
+{\footnotesize\ttfamily \#define ROZMIAR\+\_\+\+KOMORKI~(\mbox{\hyperlink{saper__game_8c_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}} / \mbox{\hyperlink{saper__game_8c_a867cde93b69d24d64969b624c1a62530}{KOLUMNY}})}
+
+\Hypertarget{saper__game_8c_a6974d08a74da681b3957b2fead2608b8}\label{saper__game_8c_a6974d08a74da681b3957b2fead2608b8} 
+\index{saper\_game.c@{saper\_game.c}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+HEIGHT~700}
+
+\Hypertarget{saper__game_8c_a2cd109632a6dcccaa80b43561b1ab700}\label{saper__game_8c_a2cd109632a6dcccaa80b43561b1ab700} 
+\index{saper\_game.c@{saper\_game.c}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+WIDTH~640}
+
+\Hypertarget{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d}\label{saper__game_8c_a8e5ba88edf0cea72a833dcdc9b47dc8d} 
+\index{saper\_game.c@{saper\_game.c}!WIERSZE@{WIERSZE}}
+\index{WIERSZE@{WIERSZE}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{WIERSZE}{WIERSZE}}
+{\footnotesize\ttfamily \#define WIERSZE~8}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{saper__game_8c_aa33a70c100c88686d51b0f67b1fc53f6}\label{saper__game_8c_aa33a70c100c88686d51b0f67b1fc53f6} 
+\index{saper\_game.c@{saper\_game.c}!liczenie\_index@{liczenie\_index}}
+\index{liczenie\_index@{liczenie\_index}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{liczenie\_index()}{liczenie\_index()}}
+{\footnotesize\ttfamily void liczenie\+\_\+index (\begin{DoxyParamCaption}\item[{int}]{mousex,  }\item[{int}]{mousey,  }\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]},  }\item[{int}]{rodzaj\+\_\+przycisku,  }\item[{int}]{licznik\+\_\+bomb }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do stwierdzenia lokalizacja kliknietego przycisku myszy i wywolania odpowiedniej funkcji z obsluga dla danego przycisku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mousex} & Parametr okreslajacy informacje o wspolrzednej x kliknietego miejsca na planszy\\
+\hline
+{\em mousey} & Parametr okreslajacy informacje o wspolrzednej y kliknietego miejsca na planszy\\
+\hline
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em rodzaj\+\_\+przycisku} & Parametr okreslajacy informacje ktory klawisz myszy zostal klikniety\\
+\hline
+{\em licznik\+\_\+bomb} & Parametr okreslajacy informacje o ilosci bomb znajdujacych sie na planszy\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{saper__game_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{saper\_game.c@{saper\_game.c}!main@{main}}
+\index{main@{main}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Glowna funkcja programu. 
+
+\begin{DoxyReturn}{Returns}
+Zwraca 0
+\end{DoxyReturn}
+\Hypertarget{saper__game_8c_af0ea3457c6588a3b6066c5535de30aab}\label{saper__game_8c_af0ea3457c6588a3b6066c5535de30aab} 
+\index{saper\_game.c@{saper\_game.c}!obsluga\_klikniecia\_l@{obsluga\_klikniecia\_l}}
+\index{obsluga\_klikniecia\_l@{obsluga\_klikniecia\_l}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{obsluga\_klikniecia\_l()}{obsluga\_klikniecia\_l()}}
+{\footnotesize\ttfamily void obsluga\+\_\+klikniecia\+\_\+l (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]},  }\item[{int}]{licznik\+\_\+bomb }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do obslugi klikniecia lewego przycisku myszy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Parametr okreslajacy wspolrzedna x kliknietego pola\\
+\hline
+{\em y} & Parametr okreslajacy wspolrzedna y kliknietego pola/param\texorpdfstring{$>$}{>} 
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em licznik\+\_\+bomb} & Parametr okreslajacy ilosc bomb znajdujacych sie na planszy\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a808255a2e00937051acc78c8cf237bda}\label{saper__game_8c_a808255a2e00937051acc78c8cf237bda} 
+\index{saper\_game.c@{saper\_game.c}!obsluga\_klikniecia\_p@{obsluga\_klikniecia\_p}}
+\index{obsluga\_klikniecia\_p@{obsluga\_klikniecia\_p}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{obsluga\_klikniecia\_p()}{obsluga\_klikniecia\_p()}}
+{\footnotesize\ttfamily void obsluga\+\_\+klikniecia\+\_\+p (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]},  }\item[{int}]{licznik\+\_\+bomb }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do klikniecie prawego przycisku myszy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Parametr okreslajacy wspolrzedna x kliknietego pola\\
+\hline
+{\em y} & Parametr okreslajacy wspolrzedna y kliknietego pola/param\texorpdfstring{$>$}{>} 
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em licznik\+\_\+bomb} & Parametr okreslajacy ilosc bomb znajdujacych sie na planszy\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a209a458f0362c3fd6a2f0d3a78712a24}\label{saper__game_8c_a209a458f0362c3fd6a2f0d3a78712a24} 
+\index{saper\_game.c@{saper\_game.c}!po\_wygranej@{po\_wygranej}}
+\index{po\_wygranej@{po\_wygranej}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{po\_wygranej()}{po\_wygranej()}}
+{\footnotesize\ttfamily void po\+\_\+wygranej (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{start }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do wyswietlenia ekranu koncowego po wygranej grze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Parametr okreslajacy czas w ktorym gra zostala rozpoczeta\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_abc67964df32c0de381bd1bc295aeef86}\label{saper__game_8c_abc67964df32c0de381bd1bc295aeef86} 
+\index{saper\_game.c@{saper\_game.c}!policz\_miny@{policz\_miny}}
+\index{policz\_miny@{policz\_miny}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{policz\_miny()}{policz\_miny()}}
+{\footnotesize\ttfamily void policz\+\_\+miny (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do zliczenia ilosci min wokol kazdego pola na planszy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Parametr okreslajacy wspolrzedna x tablicy\\
+\hline
+{\em y} & Parametr okreslajacy wspolrzedna y tablicy\\
+\hline
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_aae1e7d4e32a0de3f1e7ec30fa6b14fa1}\label{saper__game_8c_aae1e7d4e32a0de3f1e7ec30fa6b14fa1} 
+\index{saper\_game.c@{saper\_game.c}!przegrany\_czas@{przegrany\_czas}}
+\index{przegrany\_czas@{przegrany\_czas}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{przegrany\_czas()}{przegrany\_czas()}}
+{\footnotesize\ttfamily double przegrany\+\_\+czas (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{start,  }\item[{clock\+\_\+t}]{end }\end{DoxyParamCaption})}
+
+
+
+Funkcja liczaca czas w ktorym gracz przeszedl gre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Parametr okreslajacy czas rozpoczecia gry\\
+\hline
+{\em end} & Parametr okreslajacy czas zakonczenia gry\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{saper__game_8c_ae24e2c7a64b9c6a19a6f99cf6fec234d}\label{saper__game_8c_ae24e2c7a64b9c6a19a6f99cf6fec234d} 
+\index{saper\_game.c@{saper\_game.c}!rozgrywka@{rozgrywka}}
+\index{rozgrywka@{rozgrywka}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{rozgrywka()}{rozgrywka()}}
+{\footnotesize\ttfamily void rozgrywka (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}10\mbox{]}\mbox{[}10\mbox{]},  }\item[{ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}}]{display,  }\item[{ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}}]{font,  }\item[{ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}}]{event\+\_\+queue,  }\item[{int}]{liczba\+\_\+min,  }\item[{clock\+\_\+t}]{start }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do obslugi okna z plansza gry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em display} & Parametr przechowujaca informacje o oknie\\
+\hline
+{\em font} & Parametr przechowujacy informacje o czcionce\\
+\hline
+{\em event\+\_\+queue} & Parametr przechowujacy informacje o kolejce zdarzen\\
+\hline
+{\em liczba\+\_\+min} & Parametr sluzacy do okreslenia liczby min znajdujacych sie na planszy\\
+\hline
+{\em start} & Parametr sluzacy do okreslenia czasu w ktorym rozpoczeto gre\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a91e18fad696798cd7a84b8c5748b98d6}\label{saper__game_8c_a91e18fad696798cd7a84b8c5748b98d6} 
+\index{saper\_game.c@{saper\_game.c}!rysuj\_plansze@{rysuj\_plansze}}
+\index{rysuj\_plansze@{rysuj\_plansze}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{rysuj\_plansze()}{rysuj\_plansze()}}
+{\footnotesize\ttfamily void rysuj\+\_\+plansze (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]},  }\item[{int}]{licznik\+\_\+oflagowanych,  }\item[{int}]{licznik\+\_\+bomb }\end{DoxyParamCaption})}
+
+
+
+Funckja sluzaca do narysowania planszy gry na ekranie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em licznik\+\_\+oflagowanych} & Parametr okreslajacy ilosc oflagowanych pol do tej pory\\
+\hline
+{\em licznik\+\_\+bomb} & Parametr okreslajacy ilosc bomb znajdujacych sie na planszy\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a64cc188b2c56200ea0feb5ec2ba39b03}\label{saper__game_8c_a64cc188b2c56200ea0feb5ec2ba39b03} 
+\index{saper\_game.c@{saper\_game.c}!rysuj\_przegrana@{rysuj\_przegrana}}
+\index{rysuj\_przegrana@{rysuj\_przegrana}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{rysuj\_przegrana()}{rysuj\_przegrana()}}
+{\footnotesize\ttfamily void rysuj\+\_\+przegrana (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}8\mbox{]}\mbox{[}8\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Funckja sluzaca do narysowania planszy po przegranej grze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a5d2de3327d02c65eb11269b47038cd84}\label{saper__game_8c_a5d2de3327d02c65eb11269b47038cd84} 
+\index{saper\_game.c@{saper\_game.c}!sortuj\_czasy@{sortuj\_czasy}}
+\index{sortuj\_czasy@{sortuj\_czasy}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{sortuj\_czasy()}{sortuj\_czasy()}}
+{\footnotesize\ttfamily void sortuj\+\_\+czasy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do sortowania czasow w pliku tekstowym, tak by najelpsze wyswietlaly sie na gorze. 
+
+\Hypertarget{saper__game_8c_a9f48de1720463fb6397d6fb409f90790}\label{saper__game_8c_a9f48de1720463fb6397d6fb409f90790} 
+\index{saper\_game.c@{saper\_game.c}!start\_okna@{start\_okna}}
+\index{start\_okna@{start\_okna}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{start\_okna()}{start\_okna()}}
+{\footnotesize\ttfamily void start\+\_\+okna (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do stworzenia okna calej aplikacji. 
+
+\Hypertarget{saper__game_8c_a0863160269abea96094a2dcf92055036}\label{saper__game_8c_a0863160269abea96094a2dcf92055036} 
+\index{saper\_game.c@{saper\_game.c}!wyswietlenie\_planszy@{wyswietlenie\_planszy}}
+\index{wyswietlenie\_planszy@{wyswietlenie\_planszy}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{wyswietlenie\_planszy()}{wyswietlenie\_planszy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void wyswietlenie\+\_\+planszy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do wyswietlenia menu glownego i obslugi interakcji z nim zwiazanych. 
+
+\Hypertarget{saper__game_8c_abb37da0487e02b7c458cd2a94056af89}\label{saper__game_8c_abb37da0487e02b7c458cd2a94056af89} 
+\index{saper\_game.c@{saper\_game.c}!wyswietlenie\_planszy@{wyswietlenie\_planszy}}
+\index{wyswietlenie\_planszy@{wyswietlenie\_planszy}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{wyswietlenie\_planszy()}{wyswietlenie\_planszy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void wyswietlenie\+\_\+planszy (\begin{DoxyParamCaption}\item[{ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}}]{display,  }\item[{ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}}]{event\+\_\+queue,  }\item[{ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do wyswietlenia menu glownego i obslugi interakcji z nim zwiazanych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & Parametr sluzacy do przechowywania informacji o oknie\\
+\hline
+{\em event\+\_\+queue} & Parametr sluzacy do przechowywania kolejki zdarzen/param\texorpdfstring{$>$}{>} 
+\begin{DoxyParams}{Parameters}
+{\em font} & Parametr sluzacy do przechowywania informacji o czcionce\\
+\hline
+\end{DoxyParams}
+\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a86bdb2352fb60b6dbab2a2a807ce9b85}\label{saper__game_8c_a86bdb2352fb60b6dbab2a2a807ce9b85} 
+\index{saper\_game.c@{saper\_game.c}!wyswietlenie\_tablicy\_wynikow@{wyswietlenie\_tablicy\_wynikow}}
+\index{wyswietlenie\_tablicy\_wynikow@{wyswietlenie\_tablicy\_wynikow}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{wyswietlenie\_tablicy\_wynikow()}{wyswietlenie\_tablicy\_wynikow()}}
+{\footnotesize\ttfamily void wyswietlenie\+\_\+tablicy\+\_\+wynikow (\begin{DoxyParamCaption}\item[{ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}}]{display,  }\item[{ALLEGRO\+\_\+\+EVENT\+\_\+\+QUEUE \texorpdfstring{$\ast$}{*}}]{event\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do wyswietlania tablicy wynikow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & Parametr przechowujaca informacje o oknie\\
+\hline
+{\em event\+\_\+queue} & Parametr przechowujaca informacje o kolejce zdarzen/param\texorpdfstring{$>$}{>} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a20f5bff5c81d24f98952f4d9236854c8}\label{saper__game_8c_a20f5bff5c81d24f98952f4d9236854c8} 
+\index{saper\_game.c@{saper\_game.c}!zaladowanie\_planszy@{zaladowanie\_planszy}}
+\index{zaladowanie\_planszy@{zaladowanie\_planszy}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{zaladowanie\_planszy()}{zaladowanie\_planszy()}}
+{\footnotesize\ttfamily void zaladowanie\+\_\+planszy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpole}{pole}}}]{tablica\mbox{[}\+WIERSZE\mbox{]}\mbox{[}\+KOLUMNY\mbox{]},  }\item[{int}]{tablica2\mbox{[}$\,$\mbox{]},  }\item[{int}]{liczba\+\_\+min }\end{DoxyParamCaption})}
+
+
+
+Funkcja sluzaca do wyzerowania wszystkich pol planszy, a nastepnie wylosowania miejsc polozenia min. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tablica} & Tablica przechowujaca wlasciwosci danego pola\\
+\hline
+{\em tablica2} & Tablica przechowujaca ilosc min wokol danego pola\\
+\hline
+{\em liczba\+\_\+min} & Parametr okreslajacy ilosc min ktore nalezy wygenerowac na planszy\\
+\hline
+\end{DoxyParams}
+\Hypertarget{saper__game_8c_a3911956d8fa12ec01f7d4aeed6206ad8}\label{saper__game_8c_a3911956d8fa12ec01f7d4aeed6206ad8} 
+\index{saper\_game.c@{saper\_game.c}!zapisz\_czas@{zapisz\_czas}}
+\index{zapisz\_czas@{zapisz\_czas}!saper\_game.c@{saper\_game.c}}
+\doxysubsubsection{\texorpdfstring{zapisz\_czas()}{zapisz\_czas()}}
+{\footnotesize\ttfamily void zapisz\+\_\+czas (\begin{DoxyParamCaption}\item[{int}]{minuty,  }\item[{int}]{sekundy }\end{DoxyParamCaption})}
+
+
+
+Funkcja zapisujaca czas przejscia gry do zewnetrznego pliku tekstowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minuty} & Parametr okreslajacy minuty przejscia gry\\
+\hline
+{\em sekundy} & Parametr okreslajacy sekundy przejscia gry\\
+\hline
+\end{DoxyParams}

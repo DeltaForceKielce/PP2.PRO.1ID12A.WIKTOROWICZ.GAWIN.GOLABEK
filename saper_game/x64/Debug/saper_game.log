@@ -1,0 +1,19 @@
+﻿  saper_game.c
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(98,61): warning C4047: "funkcja": "int (*)[8]" różni się w poziomach operatorów pośrednich od "int *"
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(98,53): warning C4024: "policz_miny": różne typy dla formalnego i rzeczywistego parametru 4
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(195,16): warning C4101: "borderColor": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(197,16): warning C4101: "color": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(575,25): warning C4048: różne indeksy dolne tablicy: „int (*)[8]” i „int (*)[10]”
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(594,45): warning C4048: różne indeksy dolne tablicy: „int (*)[8]” i „int (*)[10]”
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(601,45): warning C4048: różne indeksy dolne tablicy: „int (*)[8]” i „int (*)[10]”
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(582,22): warning C4101: "state": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(711,40): warning C4047: "funkcja": "int *" różni się w poziomach operatorów pośrednich od "int [8][8]"
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(711,32): warning C4024: "zaladowanie_planszy": różne typy dla formalnego i rzeczywistego parametru 2
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(714,22): warning C4048: różne indeksy dolne tablicy: „int (*)[10]” i „int [8][8]”
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(721,40): warning C4047: "funkcja": "int *" różni się w poziomach operatorów pośrednich od "int [8][8]"
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(721,32): warning C4024: "zaladowanie_planszy": różne typy dla formalnego i rzeczywistego parametru 2
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(724,22): warning C4048: różne indeksy dolne tablicy: „int (*)[10]” i „int [8][8]”
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(730,40): warning C4047: "funkcja": "int *" różni się w poziomach operatorów pośrednich od "int [8][8]"
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(730,32): warning C4024: "zaladowanie_planszy": różne typy dla formalnego i rzeczywistego parametru 2
+C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\saper_game.c(733,22): warning C4048: różne indeksy dolne tablicy: „int (*)[10]” i „int [8][8]”
+  saper_game.vcxproj -> C:\Users\Łukasz\Desktop\PP2.PRO.1ID12A.WIKTOROWICZ.GAWIN.GOLABEK\saper_game\x64\Debug\saper_game.exe
